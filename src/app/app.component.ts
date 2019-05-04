@@ -7,4 +7,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'highlighterApp';
+  selectedText: string = '';
+    
+  
+  showSelectedText(oField) {
+    var text = "";
+    if (window.getSelection) {
+      text = window.getSelection().toString();
+         } else if (document.selection && document.selection.type != "Control") {
+      text = document.selection.createRange().text;
+      
+      
+        
+    }
+    this.selectedText = text;
+  }
+  highlightText(){
+   // text.style().color = "#ff0000";
+  }
 }
